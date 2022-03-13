@@ -3,7 +3,6 @@ import styled from "styled-components";
 import CityComponent from "./modules/CityComponent";
 import WeatherComponent from "./modules/WeatherInfoComponent";
 import React, { useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
 
 
 

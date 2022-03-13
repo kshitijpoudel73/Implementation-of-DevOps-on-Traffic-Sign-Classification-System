@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { WeatherIcons } from "../App";
-import CityComponent from "./CityComponent";
 
 export const WeatherInfoIcons = {
     sunset: "/icons/sunset.png",
@@ -51,14 +50,7 @@ weight:20px;
 opacity: 0.8;
 `
 
-const Back = styled.img`
-height:20px;
-weight:20px;
-opacity: 0.5;
-cursor: pointer;
-position: absolute;
-bottom: 2px;
-`
+
 
 const WeatherInfo = styled.span`
     font-size:10px;
@@ -121,7 +113,7 @@ const WeatherInfoComponent =(props) => {
     const getTime = (timeStamp) => {
         return `${new Date(timeStamp * 1000).getHours()} : ${new Date(timeStamp * 1000).getMinutes()}`}
     return (<>
-    <Back src="/icons/left.png" onSubmit={CityComponent}/>
+    
     <WeatherCondition>
         <Condition>
             <span>{`${Math.floor(weather?.main?.temp - 273)}°C`}</span> 
