@@ -1,7 +1,6 @@
 # Deployed site 
 ```
-link to demo (https://kshitijweatherapp.netlify.app)
-
+[link to demo](https://kshitijweatherapp.netlify.app)
 ```
 # Getting Started with Create React App
 
