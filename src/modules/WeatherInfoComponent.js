@@ -56,6 +56,8 @@ height:20px;
 weight:20px;
 opacity: 0.5;
 cursor: pointer;
+position: absolute;
+bottom: 2px;
 `
 
 const WeatherInfo = styled.span`

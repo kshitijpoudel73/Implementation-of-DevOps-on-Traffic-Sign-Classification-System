@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CityComponent from "./modules/CityComponent";
 import WeatherComponent from "./modules/WeatherInfoComponent";
 import React, { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 
 
 
@@ -54,12 +55,23 @@ const AppLabel = styled.span`
 
 `;
 
+const Back = styled.img`
+height:20px;
+weight:20px;
+opacity: 0.5;
+cursor: pointer;
+margin-top:28px;
+`
 
 
 
 function App() {
   const [city, updateCity] =  useState();
   const [weather, updateWeather] = useState();
+
+const goBack=() =>{
+  updateWeather(null) 
+}
   
   const fetchWeather=async(e)=>{
     e.preventDefault();
@@ -70,13 +82,20 @@ function App() {
 
   return (
     <Container>
-      <AppLabel>WEATHER APP</AppLabel>
-      {weather ? (
-      <WeatherComponent weather={weather}/> 
-      ):(
-      <CityComponent updateCity={updateCity} fetchWeather={fetchWeather}/>
-      )}
+      <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between", width:"90%", textAlign:"center"}}>
+      {weather?
+        <Back src="/icons/left.png" onClick={goBack}/>:
+        null}
+       
+        <AppLabel>WEATHER APP</AppLabel>
+      </div>
 
+       {weather? 
+       
+      <WeatherComponent weather={weather}/> :
+      <CityComponent updateCity={updateCity} fetchWeather={fetchWeather}/>
+       }
+      
       
     </Container>
   );
